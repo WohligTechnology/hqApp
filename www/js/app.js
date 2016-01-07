@@ -45,4 +45,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
+})
+.directive('chSrc', function() {
+    return {
+        restrict: 'A',
+        scope: {
+            chSrc: '='
+        },
+        replace: false,
+        link: function(scope,element,attrs) {
+          var $element = $(element);
+          console.log(scope.chSrc);
+          $element.attr("src",'http://104.197.47.172/user/getmedia?file='+scope.chSrc);
+        }
+    };
 });
