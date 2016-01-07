@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
     .state('app.home', {
-      url: '/home',
+      url: '/note/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/home.html',
@@ -44,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/note/568cea9012a7abe1049810d1');
 })
 .directive('chSrc', function() {
     return {

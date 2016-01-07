@@ -4,7 +4,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $ionicPlatform, $http) {
+.controller('HomeCtrl', function($scope, $ionicPlatform, $http,$stateParams) {
+  var id = $stateParams.id;
   function onSuccess(data, status) {
     console.log(data);
     $scope.note = data;
@@ -19,6 +20,6 @@ angular.module('starter.controllers', [])
     });
   }
   $http.post("http://104.197.47.172/note/findbyid", {
-    "note": "568cea9012a7abe1049810d1"
+    "note": id
   }).success(onSuccess);
 });
