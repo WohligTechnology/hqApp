@@ -23,6 +23,37 @@ $dark:                            #444 !default;
   .img .item {
     border-width: 0px; }
 
+.mtop {
+  margin: 33px 0px; }
+
+.mbot {
+  margin-bottom: 33px; }
+
+.list ol {
+  margin: 12px 10px;
+  list-style-type: decimal;
+  padding: 20px; }
+
+.list ul {
+  list-style: initial;
+  margin-left: 10px;
+  padding: 14px; }
+
+.main-png {
+  height: 30px;
+  margin: 0 auto; }
+
+label.item {
+  border: 0px solid;
+  border-width: 0px; }
+
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+  background: #FF5A60 !important;
+  border-color: #FF5A60 !important; }
+
+.checkbox input:before, .checkbox-icon:before {
+  border-radius: 4px !important; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

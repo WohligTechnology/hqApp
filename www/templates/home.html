@@ -1,5 +1,10 @@
-<ion-view view-title="{{note.title}}">
-
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="bar-stable">
+      
+        <img src="img/logo.png" style="height: 38px;position: absolute;">
+        
+     <h4 style="margin: 7px auto 0px;color: #fff;">{{note.title}}</h4>
+    </ion-header-bar>
   <ion-content class="has-header">
 
     <div ng-repeat="element in note.noteelements" >
@@ -8,18 +13,20 @@
         <img class="full-image" ng-src="{{'http://104.197.47.172/user/getmedia?file='+element.content}}">
       </div>
 
-      <div class="text" ng-bind-html="element.content" ng-if="element.type=='text'"></div>
+      <div class="text padding-horizontal list" ng-bind-html="element.content" ng-if="element.type=='text'"></div>
 
-      <div class="audio" ng-if="element.type=='audio'">
-        <audio controls ng-if="element.content">
+      <div class="audio padding-horizontal mtop" ng-if="element.type=='audio'">
+        <audio controls ng-if="element.content" style="width: 100%;">
           <source ch-src="element.content">
         </audio>
       </div>
-      <div class="scribble" ng-if="element.type=='scribble'" style="position:absolute;top:{{element.contentA}}px;left:0;width:100%;">
+      <div class="scribble padding-horizontal mbot" ng-if="element.type=='scribble'" style="position:absolute;top:{{element.contentA}}px;left:0;width:100%;">
         <img class="full-image" ng-src="{{'http://104.197.47.172/user/getmedia?file='+element.content}}">
       </div>
+      <div class="">
       <div class="checkbox2" ng-if="element.type=='checkbox'">
-        <ion-checkbox ng-model="element.contentA">{{element.content}}</ion-checkbox>
+        <ion-checkbox ng-model="element.contentA" checked>{{element.content}}</ion-checkbox>
+      </div>
       </div>
     </div>
   </ion-content>
